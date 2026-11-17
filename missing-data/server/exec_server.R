@@ -66,7 +66,7 @@ observeEvent(input$compute, {
   
   theta.hat.se <- mat[, "se.hat"]
   se.within <- sqrt(mean(theta.hat.se ^ 2))
-  se.between <- sd(theta.hat.se)
+  se.between <- sd(theta.hat)
   se.mi <- sqrt(se.within ^ 2 + (1 + 1 / n.iters) * se.between ^ 2)
   
   test.naive <- t.test(I(follow.up - baseline) ~ regimen, data = data)
